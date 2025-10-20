@@ -39,6 +39,7 @@ spec:
               -port={{ .Values.args.port }} \
               -concurrency={{ .Values.args.concurrency }} \
               -interval={{ .Values.args.interval }} \
+              -timeout={{ .Values.args.timeout }} \
             {{- if not .Values.useEngagementUpdate }}
               -use-engagement-update-check=false
             {{- end }}

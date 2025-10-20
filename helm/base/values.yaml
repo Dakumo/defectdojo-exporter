@@ -8,7 +8,8 @@ args:
   port: 8080
   concurrency: 5
   interval: 5m
-
+  timeout: 30s
+  
 useEngagementUpdate: true
 
 service:
