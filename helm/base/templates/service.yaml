@@ -6,6 +6,7 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.args.port }}
+    - name: http
+      port: {{ .Values.args.port }}
   selector:
     app: {{ include "defectdojo-exporter.name" . }}
