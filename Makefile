@@ -16,8 +16,17 @@ GO_BUILDINFO = -X '$(PKG_PREFIX)/lib/buildinfo.Version=$(APP_NAME)-$(DATEINFO_TA
 
 # Comma-separated list of target platforms for docker buildx
 # Note: docker buildx typically supports linux targets; keep others only if your builder supports them
-GOOS_ARCHES ?= linux/amd64,linux/arm64
-DOCKER_GODS_ARCHES ?= linux/amd64,linux/arm64
+GOOS_ARCHES = \
+  linux/amd64 \
+  linux/arm64 \
+  linux/arm \
+  linux/ppc64le \
+  linux/386 \
+  darwin/amd64 \
+  darwin/arm64 \
+  freebsd/amd64 \
+  openbsd/amd64 \
+  windows/amd64
 
 .PHONY: $(MAKECMDGOALS)
 
