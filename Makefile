@@ -28,6 +28,8 @@ GOOS_ARCHES = \
   openbsd/amd64 \
   windows/amd64
 
+DOCKER_GODS_ARCHES ?= linux/amd64,linux/arm64
+
 .PHONY: $(MAKECMDGOALS)
 
 crossbuild:
