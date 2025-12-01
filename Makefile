@@ -28,7 +28,7 @@ GOOS_ARCHES = \
 
 # Comma-separated list of target platforms for docker buildx
 # Note: docker buildx typically supports linux targets; keep others only if your builder supports them
-DOCKER_GODS_ARCHES ?= linux/amd64,linux/arm64
+DOCKER_GOOS_ARCHES ?= linux/amd64,linux/arm64
 
 .PHONY: $(MAKECMDGOALS)
 
@@ -117,7 +117,7 @@ docker-crossbuild:
 
 docker-build-multiarch-publish:
 	DOCKER_BUILDKIT=1 docker buildx build --push\
-		--platform $(DOCKER_GODS_ARCHES) \
+		--platform $(DOCKER_GOOS_ARCHES) \
 		--build-arg APP_NAME=$(APP_NAME) \
 		--build-arg PKG_PREFIX=$(PKG_PREFIX) \
 		--build-arg GO_BUILDINFO="$(GO_BUILDINFO)" \
